@@ -1,0 +1,30 @@
+<div class="login">
+  <p>Inserisci le credenziali per fare accesso</p>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input
+        id="username"
+        formControlName="username"
+        matInput
+        placeholder="username"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        matInput
+        placeholder="password"
+      />
+    </mat-form-field>
+  </form>
+  <button
+    [disabled]="form?.invalid"
+    mat-button
+    color="primary"
+    (click)="submit()"
+  >
+    invia
+  </button>
+</div>

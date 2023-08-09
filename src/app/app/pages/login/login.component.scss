@@ -1,0 +1,10 @@
+.login {
+  width: min(100%, 400px);
+  margin: 64px auto;
+  border: 1px solid grey;
+  border-radius: 32px;
+  padding: 32px;
+  > p {
+    text-align: center;
+  }
+}
