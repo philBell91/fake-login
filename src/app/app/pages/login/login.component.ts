@@ -49,7 +49,6 @@ export class LoginComponent {
     });
   }
   submit() {
-    console.log('ooook');
     this.http
       .post<{ users: User[] }>(
         'https://demo.k0s.nxtcloud.it/api/rest/getUserByEmail',
@@ -59,11 +58,14 @@ export class LoginComponent {
       )
       .pipe(catchError(() => of({ users: [] })))
       .subscribe((res: { users: User[] }) => {
-        console.log(res);
         if (res?.users?.length === 0) {
           alert('Credenziali inesistenti');
         } else {
-          this.router.navigate(['homepage']);
+          this.router.navigate(['homepage'], {
+            state: {
+              id: res.users[0].id,
+            },
+          });
         }
       });
     // utente1@nextrecruiting.it
