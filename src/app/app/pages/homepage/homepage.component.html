@@ -1,1 +1,77 @@
 <h1>Benvenuto, usa la navigazione in alto</h1>
+<br />
+<section *ngIf="user$ | async as user">
+  Modifica a tuo piacimento i dati nei seguenti campi
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input
+        id="birthday"
+        formControlName="birthday"
+        matInput
+        placeholder="birthday"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input id="city" formControlName="city" matInput placeholder="city" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="country"
+        formControlName="country"
+        matInput
+        placeholder="country"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="created_at"
+        formControlName="created_at"
+        matInput
+        placeholder="created_at"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input id="email" formControlName="email" matInput placeholder="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="first_name"
+        formControlName="first_name"
+        matInput
+        placeholder="first_name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="last_name"
+        formControlName="last_name"
+        matInput
+        placeholder="last_name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        id="nickname"
+        formControlName="nickname"
+        matInput
+        placeholder="nickname"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input id="phone" formControlName="phone" matInput placeholder="phone" />
+    </mat-form-field>
+    <mat-form-field>
+      <input id="sex" formControlName="sex" matInput placeholder="sex" />
+    </mat-form-field>
+  </form>
+  <button
+    [disabled]="form.invalid"
+    mat-raised-button
+    color="primary"
+    (click)="submit()"
+  >
+    invia
+  </button>
+</section>
+
+<!-- utente1@nextrecruiting.it -->

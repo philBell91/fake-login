@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, of, throwError } from 'rxjs';
+import { User } from 'src/app/model/User';
 
 @Component({
   standalone: true,
@@ -71,33 +72,3 @@ export class LoginComponent {
     // utente1@nextrecruiting.it
   }
 }
-
-export type User = {
-  auth_complete: boolean;
-  avatar: string;
-  birthday: string;
-  category: string;
-  cf: string;
-  city: string;
-  company: string;
-  country: string;
-  created_at: string;
-  deleted: boolean;
-  email: string;
-  email_confirmed: boolean;
-  facebook: string;
-  firebaseId: string;
-  first_name: string;
-  id: number;
-  last_name: string;
-  nickname: string;
-  notifications_enabled: boolean;
-  params: string;
-  phone: string;
-  phone_confirmed: boolean;
-  role: string;
-  sex: string;
-  status: string;
-  updated_at: string;
-  vat: string;
-};
